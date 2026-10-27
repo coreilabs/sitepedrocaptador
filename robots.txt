@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /tools/
+Sitemap: https://coreilabs.github.io/sitepedrocaptador/sitemap.xml
