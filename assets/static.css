@@ -6,7 +6,7 @@
 .policy-card li { margin: .5rem 0; }
 .policy-card a { overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } [data-aos] { opacity: 1 !important; transform: none !important; } }
-/* Identidade Araújo Tratamentos. */
+/* Identidade Cardoso Tratamentos. */
 .site-header, .site-header.is-scrolled { background: #fff; border-bottom-color: var(--border); }
 .site-nav { background: #fff; }
 .site-nav a, .nav-toggle { color: var(--primary); }
@@ -19,9 +19,9 @@
 .hero .btn-outline-light:hover { background: var(--primary-soft); }
 .health-plans-section, .section-muted, .section-accent { background: var(--secondary); }
 .site-footer { color: var(--ink); background: #fff; border-top: 1px solid var(--border); }
-.footer-layout a, .footer-layout a[href*="politica-de-privacidade"], .footer-note, .footer-cnpj { color: var(--primary); }
+.footer-layout a, .footer-layout a[href*="politica-de-privacidade"], .footer-note, .footer-company { color: var(--primary); }
 .footer-layout a:hover, .footer-layout a:focus-visible { color: var(--primary-dark); }
-.footer-cnpj { border-color: var(--border); background: var(--primary-soft); }
+.footer-company { border-color: var(--border); background: var(--primary-soft); }
 .footer-brands { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-bottom: 24px; }
 .site-footer .footer-clinic-logo { width: 148px; height: auto; margin: 0; }
 .footer-parent-brand { padding-left: 20px; border-left: 1px solid var(--border); }

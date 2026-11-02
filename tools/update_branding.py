@@ -6,7 +6,7 @@ BASE = 'https://coreilabs.github.io/sitepedrocaptador'
 REPLACEMENTS = {
     'https://clinicadependenciaquimica.net.br': BASE,
     'clinicadependenciaquimica.net.br': 'coreilabs.github.io/sitepedrocaptador',
-    'Clínica de Dependência Química': 'Araújo Tratamentos',
+    'Clínica de Dependência Química': 'Cardoso Tratamentos',
     'Dependência Química e Alcoolismo em Goiás': 'Acolhimento e Bem-estar em Goiás',
     'dependência química e alcoolismo': 'acolhimento e bem-estar',
     'dependência química ou alcoolismo': 'acolhimento e bem-estar',
@@ -20,8 +20,8 @@ REPLACEMENTS = {
     'etapas do tratamento': 'etapas do acompanhamento',
     'durante o tratamento': 'durante o acompanhamento',
     'compreender o tratamento': 'compreender o acompanhamento',
-    'Acolhimento e Bem-estar em Goiás | Acolhimento': 'Araújo Tratamentos | Acolhimento e Bem-estar em Goiás',
-    'Acolhimento para Acolhimento e Bem-estar em Goiás': 'Araújo Tratamentos — Acolhimento e Bem-estar em Goiás',
+    'Acolhimento e Bem-estar em Goiás | Acolhimento': 'Cardoso Tratamentos | Acolhimento e Bem-estar em Goiás',
+    'Acolhimento para Acolhimento e Bem-estar em Goiás': 'Cardoso Tratamentos — Acolhimento e Bem-estar em Goiás',
     'Acolhimento e orientação para acolhimento e bem-estar': 'Acolhimento, orientação e apoio ao bem-estar',
     'Acolhimento para acolhimento e bem-estar': 'Acolhimento, orientação e bem-estar',
     'Apoio para acolhimento e bem-estar': 'Apoio para você e sua família',
@@ -39,12 +39,12 @@ def revise(text):
     return text
 
 if __name__ == '__main__':
-    source = Path('C:/Users/user/Documents/GRUPO ARAÚJO')
+    source = Path('C:/Users/user/Documents/cardosotratamentos')
     for original, targets in {
-        'favicon.png': ['assets/favicon.png', 'assets/img/painel-icon.png'],
-        'logotipo grupo araujo tratamentos horizontal.png': ['assets/logotipo-horizontal.png', 'assets/img/hero-logo-horizontal.png'],
-        'logotipo grupo araujo tratamentos vertical.png': ['assets/logotipo-vertical.png', 'assets/grupo-araujo-vertical.png', 'assets/img/hero-logo-vertical.png'],
-        'opengraph_branco.png': ['assets/og.png'],
+        'favicon_icon.webp': ['assets/favicon.webp'],
+        'logotipo_cardoso_tratamentos_horizontal.webp': ['assets/logotipo-horizontal.webp'],
+        'logotipo_cardoso_tratamentos_vertical.webp': ['assets/logotipo-vertical.webp'],
+        'opengraph_cardoso_tratamentos.webp': ['assets/og.webp'],
     }.items():
         for target in targets:
             if '--local' not in sys.argv:
@@ -53,9 +53,9 @@ if __name__ == '__main__':
         path = ROOT / name
         text = revise(path.read_text(encoding='utf-8'))
         if name.endswith('.html'):
-            text = re.sub(r'<div class="footer-brands">.*?</div></div>', '<div class="footer-brands"><img class="footer-group-logo" alt="Araújo Tratamentos" src="assets/logotipo-vertical.png" loading="lazy"/></div>', text)
+            text = re.sub(r'<div class="footer-brands">.*?</div></div>', '<div class="footer-brands"><img class="footer-group-logo" alt="Cardoso Tratamentos" src="assets/logotipo-vertical.webp" loading="lazy"/></div>', text)
             text = text.replace('rel="noopener"', 'rel="noopener noreferrer"')
-            text = re.sub(r'(assets/(?:logotipo-horizontal|logotipo-vertical|grupo-araujo-vertical|favicon|og)\.png)(?!\?)', r'\1?v=20261027', text)
+            text = re.sub(r'(assets/(?:logotipo-horizontal|logotipo-vertical|grupo-araujo-vertical|favicon|og)\.webp)(?!\?)', r'\1?v=20261102', text)
         path.write_text(text, encoding='utf-8')
     path = ROOT / 'assets/js/units.js'
     config = json.loads(path.read_text(encoding='utf-8').removeprefix('window.GAT_CONFIG = ').strip().removesuffix(';'))

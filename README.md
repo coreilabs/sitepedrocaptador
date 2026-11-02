@@ -1,4 +1,4 @@
-# Site estático — Grupo Araújo Tratamentos
+# Site estático — Cardoso Tratamentos
 
 Domínio: https://coreilabs.github.io/sitepedrocaptador
 
@@ -29,7 +29,7 @@ Não publique `tools/`, que contém os utilitários de geração e validação e
 
 ## Contato e conteúdo
 
-Identidade visual Araújo Tratamentos com os logotipos horizontal e vertical, favicon e Open Graph fornecidos. Textos institucionais usam acolhimento, orientação e bem-estar. Telefone: 62 99906-3384; WhatsApp: https://wa.me/556299063384. CNPJ preservado. O formulário prepara uma mensagem e abre o WhatsApp; não armazena informações nem realiza envios automáticos. Disponibilidade e condições das clínicas precisam ser confirmadas com a equipe.
+Identidade visual Cardoso Tratamentos com os logotipos horizontal e vertical, favicon e Open Graph fornecidos. Textos institucionais usam acolhimento, orientação e bem-estar. Telefone: 62 99906-3384; WhatsApp: https://wa.me/556299063384. Identificação institucional: Cardoso Tratamentos, sem exibição do CNPJ anterior. O formulário prepara uma mensagem e abre o WhatsApp; não armazena informações nem realiza envios automáticos. Disponibilidade e condições das clínicas precisam ser confirmadas com a equipe.
 
 Dados e fotos são uma cópia local, não uma consulta em tempo real. Alterações no WordPress e na API não se refletem automaticamente aqui. Para edições manuais, altere o HTML, `assets/style.css`, `assets/static.css` e `assets/js/units.js`.
 
