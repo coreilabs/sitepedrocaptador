@@ -62,6 +62,8 @@ if __name__ == '__main__':
     for unit in config['unidades']:
         unit['descricao'] = f"Unidade em {unit['cidade']} - {unit['estado']}. Acolhimento e acompanhamento individualizado. Consulte nossa equipe sobre estrutura, condições e disponibilidade."
     path.write_text('window.GAT_CONFIG = ' + json.dumps(config, ensure_ascii=False) + ';\n', encoding='utf-8')
+    from brand_identity import apply_identity
+    apply_identity()
     from refresh_assets import refresh_assets
     refresh_assets()
     (ROOT / 'CNAME').write_text('vidanovatratamentogo.com.br\n', encoding='utf-8')

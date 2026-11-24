@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const assert = require('assert/strict');
 (async () => {
-  const out = path.join(__dirname, 'validation');
+  const out = path.join('C:/Users/user/.codex/browser-artifacts/sitepedrocaptador', `branding-${Date.now()}`);
   fs.mkdirSync(out, {recursive:true});
   const browser = await launchChrome();
   const page = await browser.newPage({viewport:{width:1440,height:1000}, reducedMotion:'reduce'});

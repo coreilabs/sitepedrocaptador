@@ -18,8 +18,8 @@ def refresh_assets():
             return asset + '?v=' + token
 
         text = re.sub(r'(assets/[^\s"<>?]+\.(?:css|js|webp))(?:\?v=[a-zA-Z0-9]+)?', version, text)
-        title = 'Privacidade | Vida Nova Tratamentos' if name.startswith('politica') else 'Vida Nova Tratamentos | Atendimento em todo Brasil'
-        description = 'Saiba como seus dados são usados no site e no contato com nossa equipe.' if name.startswith('politica') else 'Tratamento, acolhimento e orientação em todo o Brasil. Fale com nossa equipe 24 horas.'
+        title = 'Privacidade | Vida Nova Tratamentos' if name.startswith('politica') else 'Vida Nova Tratamentos'
+        description = 'Saiba como seus dados são usados no site e no contato com nossa equipe.' if name.startswith('politica') else 'Cuidando de vidas, restaurando sonhos. Acolhimento e orientação para você e sua família.'
         for key, value in [('og:title', title), ('og:description', description), ('twitter:description', description)]:
             text = re.sub(r'(<meta (?:property|name)="' + re.escape(key) + r'" content=")[^"]*(">)', lambda m: m[1] + value + m[2], text)
         for key, value in [('twitter:title', title), ('twitter:image', 'https://vidanovatratamentogo.com.br/assets/og.webp?v=' + versions['assets/og.webp'])]:
