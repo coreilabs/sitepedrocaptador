@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SOURCE = Path(r'C:\laragon\www\grupoaraujotratamentos')
 THEME = SOURCE / 'wordpress-theme/grupo-araujo'
 ORIGIN = 'https://grupoaraujotratamentos.com.br'
-DOMAIN = 'https://coreilabs.github.io/sitepedrocaptador'
+DOMAIN = 'https://vidanovatratamentogo.com.br'
 ASSETS = ROOT / 'assets'
 ASSETS.mkdir(exist_ok=True)
 

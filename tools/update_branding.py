@@ -2,10 +2,10 @@ from pathlib import Path
 import json, re, shutil, sys
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = 'https://coreilabs.github.io/sitepedrocaptador'
+BASE = 'https://vidanovatratamentogo.com.br'
 REPLACEMENTS = {
     'https://clinicadependenciaquimica.net.br': BASE,
-    'clinicadependenciaquimica.net.br': 'coreilabs.github.io/sitepedrocaptador',
+    'clinicadependenciaquimica.net.br': 'vidanovatratamentogo.com.br',
     'Clínica de Dependência Química': 'Cardoso Tratamentos',
     'Dependência Química e Alcoolismo em Goiás': 'Acolhimento e Bem-estar em Goiás',
     'dependência química e alcoolismo': 'acolhimento e bem-estar',
@@ -62,4 +62,4 @@ if __name__ == '__main__':
     for unit in config['unidades']:
         unit['descricao'] = f"Unidade em {unit['cidade']} - {unit['estado']}. Acolhimento e acompanhamento individualizado. Consulte nossa equipe sobre estrutura, condições e disponibilidade."
     path.write_text('window.GAT_CONFIG = ' + json.dumps(config, ensure_ascii=False) + ';\n', encoding='utf-8')
-    (ROOT / 'CNAME').unlink(missing_ok=True)
+    (ROOT / 'CNAME').write_text('vidanovatratamentogo.com.br\n', encoding='utf-8')

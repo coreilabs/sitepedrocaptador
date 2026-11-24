@@ -1,6 +1,6 @@
 # Site estático — Cardoso Tratamentos
 
-Domínio: https://coreilabs.github.io/sitepedrocaptador
+Domínio: https://vidanovatratamentogo.com.br
 
 O projeto contém somente duas páginas públicas: `index.html` e `politica-de-privacidade.html`. São nove unidades de Goiás com fotos: seis masculinas e três femininas. Todas as imagens e bibliotecas são locais. Não há WordPress, PHP, banco de dados, blog, posts, triagem ou painel administrativo.
 
@@ -23,6 +23,7 @@ Envie para a raiz da hospedagem apenas:
 - `assets/`
 - `robots.txt`
 - `sitemap.xml`
+- `CNAME` se utilizar GitHub Pages
 - `.htaccess` se a hospedagem utilizar Apache
 
 Não publique `tools/`, que contém os utilitários de geração e validação e suas dependências. Os metadados e o sitemap já usam o domínio final. No GitHub Pages, publique na base /sitepedrocaptador/, sem domínio personalizado e sem CNAME. O projeto foi preparado localmente; não foi publicado.
