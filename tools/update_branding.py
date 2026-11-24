@@ -6,7 +6,7 @@ BASE = 'https://vidanovatratamentogo.com.br'
 REPLACEMENTS = {
     'https://clinicadependenciaquimica.net.br': BASE,
     'clinicadependenciaquimica.net.br': 'vidanovatratamentogo.com.br',
-    'Clínica de Dependência Química': 'Cardoso Tratamentos',
+    'Clínica de Dependência Química': 'Vida Nova Tratamentos',
     'Dependência Química e Alcoolismo em Goiás': 'Acolhimento e Bem-estar em Goiás',
     'dependência química e alcoolismo': 'acolhimento e bem-estar',
     'dependência química ou alcoolismo': 'acolhimento e bem-estar',
@@ -20,8 +20,8 @@ REPLACEMENTS = {
     'etapas do tratamento': 'etapas do acompanhamento',
     'durante o tratamento': 'durante o acompanhamento',
     'compreender o tratamento': 'compreender o acompanhamento',
-    'Acolhimento e Bem-estar em Goiás | Acolhimento': 'Cardoso Tratamentos | Acolhimento e Bem-estar em Goiás',
-    'Acolhimento para Acolhimento e Bem-estar em Goiás': 'Cardoso Tratamentos — Acolhimento e Bem-estar em Goiás',
+    'Acolhimento e Bem-estar em Goiás | Acolhimento': 'Vida Nova Tratamentos | Acolhimento e Bem-estar em Goiás',
+    'Acolhimento para Acolhimento e Bem-estar em Goiás': 'Vida Nova Tratamentos — Acolhimento e Bem-estar em Goiás',
     'Acolhimento e orientação para acolhimento e bem-estar': 'Acolhimento, orientação e apoio ao bem-estar',
     'Acolhimento para acolhimento e bem-estar': 'Acolhimento, orientação e bem-estar',
     'Apoio para acolhimento e bem-estar': 'Apoio para você e sua família',
@@ -39,12 +39,12 @@ def revise(text):
     return text
 
 if __name__ == '__main__':
-    source = Path('C:/Users/user/Documents/cardosotratamentos')
+    source = Path('C:/Users/user/Documents/vidanovatratamentos')
     for original, targets in {
         'favicon_icon.webp': ['assets/favicon.webp'],
-        'logotipo_cardoso_tratamentos_horizontal.webp': ['assets/logotipo-horizontal.webp'],
-        'logotipo_cardoso_tratamentos_vertical.webp': ['assets/logotipo-vertical.webp'],
-        'opengraph_cardoso_tratamentos.webp': ['assets/og.webp'],
+        next(source.glob('*horizontal.webp')).name: ['assets/logotipo-horizontal.webp'],
+        next(source.glob('*vertical.webp')).name: ['assets/logotipo-vertical.webp'],
+        next(source.glob('opengraph*.webp')).name: ['assets/og.webp'],
     }.items():
         for target in targets:
             if '--local' not in sys.argv:
@@ -53,7 +53,7 @@ if __name__ == '__main__':
         path = ROOT / name
         text = revise(path.read_text(encoding='utf-8'))
         if name.endswith('.html'):
-            text = re.sub(r'<div class="footer-brands">.*?</div></div>', '<div class="footer-brands"><img class="footer-group-logo" alt="Cardoso Tratamentos" src="assets/logotipo-vertical.webp" loading="lazy"/></div>', text)
+            text = re.sub(r'<div class="footer-brands">.*?</div></div>', '<div class="footer-brands"><img class="footer-group-logo" alt="Vida Nova Tratamentos" src="assets/logotipo-vertical.webp" loading="lazy"/></div>', text)
             text = text.replace('rel="noopener"', 'rel="noopener noreferrer"')
             text = re.sub(r'(assets/(?:logotipo-horizontal|logotipo-vertical|grupo-araujo-vertical|favicon|og)\.webp)(?!\?)', r'\1?v=20261102', text)
         path.write_text(text, encoding='utf-8')
@@ -62,4 +62,6 @@ if __name__ == '__main__':
     for unit in config['unidades']:
         unit['descricao'] = f"Unidade em {unit['cidade']} - {unit['estado']}. Acolhimento e acompanhamento individualizado. Consulte nossa equipe sobre estrutura, condições e disponibilidade."
     path.write_text('window.GAT_CONFIG = ' + json.dumps(config, ensure_ascii=False) + ';\n', encoding='utf-8')
+    from refresh_assets import refresh_assets
+    refresh_assets()
     (ROOT / 'CNAME').write_text('vidanovatratamentogo.com.br\n', encoding='utf-8')

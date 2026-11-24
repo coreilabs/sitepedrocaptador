@@ -6,7 +6,7 @@
 .policy-card li { margin: .5rem 0; }
 .policy-card a { overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } [data-aos] { opacity: 1 !important; transform: none !important; } }
-/* Identidade Cardoso Tratamentos. */
+/* Identidade Vida Nova Tratamentos. */
 .site-header, .site-header.is-scrolled { background: #fff; border-bottom-color: var(--border); }
 .site-nav { background: #fff; }
 .site-nav a, .nav-toggle { color: var(--primary); }
